@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EstimateIQ — House Price Predictor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="house.css" />
+</head>
+<body>
+
+  <!-- Background texture -->
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="logo">
+        <span class="logo-mark">⌂</span>
+        <span class="logo-text">EstimateIQ</span>
+      </div>
+      <p class="tagline">JAI-powered property valuation</p>
+    </header>
+
+    <!-- Main card -->
+    <main class="card" role="main">
+
+      <div class="card-header">
+        <h1 class="card-title">Predict Your Home's Value</h1>
+        <p class="card-subtitle">
+          Enter a few details and our trained model will estimate the market price instantly.
+        </p>
+      </div>
+
+      <div class="card-body">
+
+        <!-- Form -->
+        <div class="form" id="predictionForm" novalidate>
+
+          <!-- Location -->
+          <div class="field-group">
+            <label class="field-label" for="location">Location Type</label>
+            <div class="select-wrapper">
+              <select class="field-input" id="location" name="location" required>
+                <option value="" disabled selected>Choose a location…</option>
+                <option value="urban">Urban</option>
+                <option value="suburban">Suburban</option>
+                <option value="rural">Rural</option>
+                <option value="coastal">Coastal</option>
+              </select>
+              <span class="select-chevron" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- Size + Rooms -->
+          <div class="field-row">
+            <div class="field-group">
+              <label class="field-label" for="size">
+                Property Size
+                <span class="field-unit">sq ft</span>
+              </label>
+              <input
+                class="field-input"
+                type="number"
+                id="size"
+                name="size"
+                placeholder="e.g. 1 400"
+                min="100"
+                max="20000"
+                step="1"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="rooms">
+                Bedrooms
+                <span class="field-unit">rooms</span>
+              </label>
+              <input
+                class="field-input"
+                type="number"
+                id="rooms"
+                name="rooms"
+                placeholder="e.g. 3"
+                min="1"
+                max="20"
+                step="1"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <button class="btn-predict" id="submitBtn" type="button" onclick="handleSubmit()">
+            <span class="btn-text">Estimate Price</span>
+            <span class="btn-icon" aria-hidden="true">→</span>
+          </button>
+
+        </div>
+
+        <!-- Result panel (hidden by default) -->
+        <div class="result-panel" id="resultPanel" aria-live="polite">
+
+          <!-- Loading state -->
+          <div class="state-loading" id="stateLoading" hidden>
+            <div class="spinner" aria-label="Loading…"></div>
+            <p class="state-label">Analyzing property…</p>
+          </div>
+
+          <!-- Success state -->
+          <div class="state-success" id="stateSuccess" hidden>
+            <p class="result-eyebrow">Estimated Market Value</p>
+            <p class="result-price" id="resultPrice">—</p>
+            <p class="result-note">
+              Based on location, size, and room count via our ML model.
+            </p>
+            <button class="btn-reset" id="resetBtn" onclick="handleReset()">
+              ← New estimate
+            </button>
+          </div>
+
+          <!-- Error state -->
+          <div class="state-error" id="stateError" hidden>
+            <span class="error-icon" aria-hidden="true">⚠</span>
+            <p class="error-message" id="errorMessage">Something went wrong.</p>
+            <button class="btn-reset" onclick="handleReset()">Try again</button>
+          </div>
+
+        </div>
+      </div><!-- /.card-body -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>Powered by JAI</p>
+    </footer>
+
+  </div><!-- /.page-wrapper -->
+
+  <script src="house.js"></script>
+</body>
+</html>
