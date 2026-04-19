@@ -6,7 +6,7 @@
 "use strict";
 
 // ── Configuration ─────────────────────
-const API_BASE = https://housing-prediction-76lj.onrender.com
+const API_BASE = "https://housing-prediction-76lj.onrender.com"
 const ENDPOINT = `${API_BASE}/predict`;
 
 // ── DOM References ────────────────────
