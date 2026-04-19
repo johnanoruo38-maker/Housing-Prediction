@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: housing-prediction-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt && python house-model.py
+    startCommand: cd backend && python house_app.py
+    envVars:
+      - key: PORT
+        value: 10000
