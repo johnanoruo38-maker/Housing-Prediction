@@ -48,6 +48,10 @@ MODEL, METADATA = load_artefacts()
 
 # ── Routes ────────────────
 
+@app.route("/", methods=["GET"])
+def index():
+    return jsonify({"status": "ok", "message": "Housing Prediction API is running"}), 200
+
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({"status": "ok", "model": METADATA.get("model_name")}), 200

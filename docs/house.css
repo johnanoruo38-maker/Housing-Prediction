@@ -88,10 +88,9 @@ body {
 }
 
 .logo-img {
-  width: 42px;
-  height: 42px;
-  filter: invert(45%) sepia(80%) saturate(800%)
-	  hue-rotate(5deg) brightness(95%);
+  width: auto;
+  height: 52px;
+  display: block;
 }
 
 .logo-text {
