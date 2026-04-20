@@ -39,6 +39,11 @@ body {
   line-height: 1.6;
   color: var(--c-text);
   background-color: var(--c-bg);
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   min-height: 100dvh;
   -webkit-font-smoothing: antialiased;
 }
@@ -49,10 +54,11 @@ body {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image:
-    linear-gradient(rgba(170, 140, 90, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(170, 140, 90, 0.06) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(20, 10, 0, 0.45) 100%
+   );
 }
 
 /* ── Page Layout ───── */
@@ -81,10 +87,11 @@ body {
   margin-bottom: 0.25rem;
 }
 
-.logo-mark {
-  font-size: 1.5rem;
-  line-height: 1;
-  color: var(--c-accent);
+.logo-img {
+  width: 42px;
+  height: 42px;
+  filter: invert(45%) sepia(80%) saturate(800%)
+	  hue-rotate(5deg) brightness(95%);
 }
 
 .logo-text {
@@ -92,7 +99,8 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: var(--c-text);
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
 .tagline {
@@ -100,7 +108,8 @@ body {
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--c-muted);
+  color: rgba(255, 255, 255, 0.80);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
 
 /* ── Card ────── */
@@ -356,7 +365,7 @@ body {
 /* ── Footer ─────── */
 .site-footer {
   font-size: 0.75rem;
-  color: var(--c-muted);
+  color: rgba(255, 255, 255, 0.70);
   letter-spacing: 0.02em;
   animation: fadeIn 0.5s 0.3s ease both;
   opacity: 0;
