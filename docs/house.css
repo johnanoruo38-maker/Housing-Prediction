@@ -111,6 +111,16 @@ body {
   text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
 
+.Name {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.80);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+
 /* ── Card ────── */
 .card {
   width: 100%;
