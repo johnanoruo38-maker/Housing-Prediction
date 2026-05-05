@@ -5,7 +5,7 @@ const IS_LOCAL = window.location.hostname === "localhost"||
                  window.location.hostname === "127.0.0.1";
 
 const API_BASE = IS_LOCAL
-   ? "https://localhost:5000"
+   ? "http://localhost:5000"
    : "https://housing-prediction-76lj.onrender.com";
 const ENDPOINT = `${API_BASE}/predict`;
 

@@ -1,0 +1,21 @@
+{
+  "model_name": "Random Forest",
+  "known_locations": [
+    "coastal",
+    "rural",
+    "suburban",
+    "urban"
+  ],
+  "cat_features": [
+    "location"
+  ],
+  "num_features": [
+    "size",
+    "rooms"
+  ],
+  "metrics": {
+    "MAE": 12801.446741575426,
+    "RMSE": 22590.40938008885,
+    "R2": 0.988318425572696
+  }
+}
